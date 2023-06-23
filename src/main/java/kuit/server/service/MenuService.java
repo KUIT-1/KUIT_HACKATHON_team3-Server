@@ -20,9 +20,14 @@ public class MenuService {
         log.info("[MenuService.getAllByMenuCategoryId]");
         return menuDao.getAllByMenuCategoryId(menu_category_id);
     }
-//
-//    public List<GetMenuResponse> getAllByDetailCategoryId(Long menu_category_id, Long detail_cate_id) {
-//        log.info("[MenuService.getAllByDetailCategoryId]");
-//        return menuDao.getAllByDetailCategoryId(menu_category_id, detail_cate_id);
+
+    public List<GetMenuResponse> getAllByDetailCategoryId(Long detail_cate_id) {
+        log.info("[MenuService.getAllByDetailCategoryId]");
+        return menuDao.getAllByDetailCategoryId(detail_cate_id);
+    }
+
+//    public GetMenuResponse findMenuById(Long menu_id) {
+//        log.info("[MenuService.getAllByMenuId]");
+//        return menuDao.findMenuById(menu_id);
 //    }
 }
