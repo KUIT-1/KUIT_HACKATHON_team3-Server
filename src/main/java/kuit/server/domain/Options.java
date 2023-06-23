@@ -13,12 +13,12 @@ public class Options {
     private Long id;
 
     // 옵션명
-    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+    @Column(nullable = false, columnDefinition = "VARCHAR(100) CHARACTER SET UTF8")
 
     private String name;
 
     // 옵션 설명
-    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+    @Column(nullable = false, columnDefinition = "TEXT CHARACTER SET UTF8")
 
     private String description;
 

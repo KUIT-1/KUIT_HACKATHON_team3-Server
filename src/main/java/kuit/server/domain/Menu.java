@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -20,7 +21,7 @@ public class Menu {
     private Long id;
 
     //이름
-    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+    @Column(nullable = false, columnDefinition = "VARCHAR(20) CHARACTER SET UTF8")
     private String name;
 
     //가격
@@ -33,17 +34,23 @@ public class Menu {
 
     // 설명
 
-    @Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+    @Column(columnDefinition = "TEXT CHARACTER SET UTF8")
     private String description;
 
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(20) CHARACTER SET UTF8")
     private String status;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date created_at;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date updated_at;
 
     //Foreign Key
     @ManyToOne
-    @JoinColumn(name = "detail_category_id")
+    @JoinColumn(name = "detail_cate_id")
     private Detail_Category detailCategory;
 
 }

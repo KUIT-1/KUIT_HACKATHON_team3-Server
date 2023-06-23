@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -23,9 +24,15 @@ public class Selected_Menu {
     private int menu_count;
 
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(20) CHARACTER SET UTF8")
     private String status;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date created_at;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date updated_at;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "menu_id")
