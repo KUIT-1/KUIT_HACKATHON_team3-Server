@@ -15,7 +15,8 @@ public class Option_item {
     private Long id;
 
     //옵션 아이템 명
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+
     private String name;
 
     //옵션 아이템 추가 가격
@@ -23,6 +24,8 @@ public class Option_item {
     private int add_price;
 
     //옵션 아이템 설명
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+
     private String description;
 
     //옵션 아이템 수량
@@ -45,8 +48,8 @@ public class Option_item {
     //옵션 id
 
     @ManyToOne
-    @JoinColumn(name = "option_id")
-    private Option option;
+    @JoinColumn(name = "options_id")
+    private Options options;
 
 
 

@@ -19,6 +19,10 @@ public class Menu {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    //이름
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+    private String name;
+
     //가격
     @Column(nullable = false)
     private int price;
@@ -29,6 +33,7 @@ public class Menu {
 
     // 설명
 
+    @Column(columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
     private String description;
 
 

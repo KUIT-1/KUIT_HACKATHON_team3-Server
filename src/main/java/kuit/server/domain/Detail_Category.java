@@ -17,10 +17,10 @@ public class Detail_Category {
     private Long id;
 
     // 세부 카테고리 명
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
     private String description;
 
     private String status;

@@ -19,7 +19,8 @@ public class Menu_Category {
     private Long id;
 
     //카테고리명
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+
     private String name;
 
     private String status;

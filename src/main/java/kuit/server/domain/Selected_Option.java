@@ -20,9 +20,13 @@ public class Selected_Option {
 
 
     //Foriegn Key
-    private Long option_item_id;
+    @OneToOne
+    @JoinColumn(name = "option_item_id")
+    private Option_item optionItem;
 
-    private Long selected_menu_id;
+    @ManyToOne
+    @JoinColumn(name = "selected_menu_id")
+    private Selected_Menu selectedMenu;
 
 
     private String status;

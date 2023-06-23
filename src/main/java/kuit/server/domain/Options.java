@@ -2,23 +2,24 @@ package kuit.server.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Getter
-@Table(name = "option")
-public class Option {
+@Table(name = "options")
+public class Options {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
     // 옵션명
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+
     private String name;
 
     // 옵션 설명
-    @Column(name = "description")
+    @Column(nullable = false, columnDefinition = "VARCHAR(255) CHARACTER SET UTF8")
+
     private String description;
 
     // 퍼스널 옵션 여부
