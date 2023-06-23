@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -21,17 +20,10 @@ public class Orders {
     @Column(nullable = false)
     private Long user_id;
 
-    @Column(nullable = false, columnDefinition = "VARCHAR(10) CHARACTER SET UTF8")
     private String order_status;
 
-    @Column(nullable = false, columnDefinition = "VARCHAR(20) CHARACTER SET UTF8")
     private String status;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(columnDefinition = "Timestamp")
-    private Date created_at;
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(columnDefinition = "Timestamp")
-    private Date updated_at;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 
 }
