@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetDetailCategoryResponse {
-    private long menu_category_id;
+    private long id;
     private String name;
     private String description;
 }

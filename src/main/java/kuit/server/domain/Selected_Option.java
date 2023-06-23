@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -29,8 +30,15 @@ public class Selected_Option {
     private Selected_Menu selectedMenu;
 
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(20) CHARACTER SET UTF8")
     private String status;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date created_at;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "Timestamp")
+    private Date updated_at;
+
 
 }

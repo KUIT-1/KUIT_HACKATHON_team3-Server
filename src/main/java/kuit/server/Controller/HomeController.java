@@ -1,4 +1,4 @@
-package com.example.kuitbucksServer.Controller;
+package kuit.server.Controller;
 
 public class HomeController {
 }
