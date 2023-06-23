@@ -34,4 +34,18 @@ public class MenuDao {
                    rs.getString("description")
                 ));
     }
+
+//    public List<GetMenuResponse> getAllByDetailCategoryId(Long MenuCategoryId, Long DetailCateId) {
+//        log.info("[MenuDao.getAllByDetailCategoryId]");
+//        String sql = "select name, price, description, detail_cate_id from Menu where menu_category_id=:menu_category_id and detail_cate_id=:detail_cate_id"; // and status='active'
+//        Map<String, Object> param = Map.of("menu_category_id", MenuCategoryId, "detail_cate_id", DetailCateId);
+//
+//        return jdbcTemplate.query(sql, param,
+//                (rs, rowNum)-> new GetMenuResponse(
+//                        rs.getString("name"),
+//                        rs.getInt("price"),
+//                        rs.getString("description"),
+//                        rs.getLong("detail_cate_id")
+//                ));
+//    }
 }
