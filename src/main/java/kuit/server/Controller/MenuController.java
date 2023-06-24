@@ -4,6 +4,7 @@ package kuit.server.Controller;
 import kuit.server.common.response.BaseResponse;
 import kuit.server.dto.menu.GetDetailCategoryResponse;
 import kuit.server.dto.menu.GetMenuResponse;
+import kuit.server.dto.menu.GetOptionsResponse;
 import kuit.server.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,11 +34,18 @@ public class MenuController {
         return new BaseResponse<>(menuService.getAllByDetailCategoryId(detail_cate_id));
     }
 
-//    @GetMapping("/menu/{menu_id}")
-//    public BaseResponse<GetMenuResponse> findMenuById(
-//            @PathVariable("menu_id") Long menu_id){
-//        log.info("[MenuController.getAllByMenuId]");
-//        return new BaseResponse<>(menuService.findMenuById(menu_id));
-//    }
+    @GetMapping("/menu/{menu_id}")
+    public BaseResponse<GetMenuResponse> findMenuById(
+            @PathVariable("menu_id") Long menu_id){
+        log.info("[MenuController.findMenuById]");
+        return new BaseResponse<>(menuService.findMenuById(menu_id));
+    }
+
+    @GetMapping("/options/{menu_id}")
+    public BaseResponse<GetOptionsResponse> findOptionsByMenuId(
+            @PathVariable("menu_id") Long menu_id){
+        log.info("[MenuController.findOptionsByMenuId]");
+        return new BaseResponse<>(menuService.findOptionsByMenuId(menu_id));
+    }
 
 }

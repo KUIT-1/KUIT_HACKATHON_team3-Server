@@ -3,6 +3,7 @@ package kuit.server.service;
 import kuit.server.dao.MenuDao;
 import kuit.server.dto.menu.GetDetailCategoryResponse;
 import kuit.server.dto.menu.GetMenuResponse;
+import kuit.server.dto.menu.GetOptionsResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,13 @@ public class MenuService {
         return menuDao.getAllByDetailCategoryId(detail_cate_id);
     }
 
-//    public GetMenuResponse findMenuById(Long menu_id) {
-//        log.info("[MenuService.getAllByMenuId]");
-//        return menuDao.findMenuById(menu_id);
-//    }
+    public GetMenuResponse findMenuById(Long menu_id) {
+        log.info("[MenuService.findMenuById]");
+        return menuDao.findMenuById(menu_id);
+    }
+
+    public GetOptionsResponse findOptionsByMenuId(Long menu_id) {
+        log.info("[MenuService.findOptionsByMenuId]");
+        return menuDao.findOptionsByMenuId(menu_id);
+    }
 }
